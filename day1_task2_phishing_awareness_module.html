@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phishing Awareness Training Module</title>
+<style>
+    body { font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background-color: #f0f2f5; color: #333; line-height: 1.6; margin: 0; padding: 0; }
+    .header { background-color: #1a365d; color: white; padding: 2.5rem 1rem; text-align: center; border-bottom: 5px solid #3182ce; }
+    .header h1 { margin: 0; font-size: 2.5rem; letter-spacing: -0.5px; }
+    .header p { margin-top: 0.5rem; font-size: 1.2rem; opacity: 0.9; }
+    .container { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    .module-section { background: white; border-radius: 8px; padding: 2.5rem; margin-bottom: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+    h2 { color: #2b6cb0; border-bottom: 2px solid #edf2f7; padding-bottom: 0.5rem; margin-top: 0; font-size: 1.8rem; }
+    h3 { color: #2d3748; }
+    ul { padding-left: 1.5rem; }
+    li { margin-bottom: 0.75rem; }
+    code { background-color: #edf2f7; padding: 0.2rem 0.4rem; border-radius: 4px; font-family: monospace; color: #e53e3e; }
+    .highlight { background-color: #ebf8ff; padding: 1.5rem; border-left: 5px solid #3182ce; border-radius: 0 8px 8px 0; margin: 1.5rem 0; }
+    .danger { background-color: #fff5f5; border-left: 5px solid #e53e3e; }
+    .scenario { border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; background-color: #fafafa; }
+    .scenario h4 { margin-top: 0; color: #4a5568; font-size: 1.2rem; }
+    .quiz-container { background-color: #f7fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.5rem; margin-top: 1.5rem; }
+    .question { font-weight: bold; margin-bottom: 1rem; font-size: 1.1rem; }
+    .options { display: flex; flex-direction: column; gap: 0.75rem; }
+    .option-btn { background-color: white; border: 1px solid #cbd5e0; padding: 1rem 1.5rem; border-radius: 6px; text-align: left; cursor: pointer; transition: all 0.2s ease; font-size: 1rem; color: #4a5568; font-family: inherit; }
+    .option-btn:hover { background-color: #edf2f7; border-color: #a0aec0; transform: translateX(2px); }
+    .option-btn:focus { outline: 2px solid #3182ce; outline-offset: 2px; }
+    .option-btn.selected-correct { background-color: #c6f6d5; border-color: #38a169; color: #22543d; font-weight: bold; }
+    .option-btn.selected-incorrect { background-color: #fed7d7; border-color: #e53e3e; color: #742a2a; }
+    .feedback { margin-top: 1rem; font-weight: bold; display: none; padding: 1rem; border-radius: 6px; animation: fadeIn 0.3s ease-in; }
+    .feedback.show { display: block; }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-5px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>🎣 Phishing Awareness Training</h1>
+    <p>Don't Take the Bait: Protecting Yourself and Your Data</p>
+</div>
+
+<div class="container">
+    <div class="module-section">
+        <h2>🧠 1. The Attackers' Playbook</h2>
+        <p>Phishing isn't just about bad code; it's a psychological attack known as <strong>Social Engineering</strong>. Attackers manipulate human emotions to bypass security.</p>
+        <ul>
+            <li><strong>Urgency & Fear:</strong> "Your account will be suspended in 24 hours if you do not verify your details."</li>
+            <li><strong>Curiosity:</strong> "Click here to see the photos from last weekend!"</li>
+            <li><strong>Greed:</strong> "You've won a gift card! Claim your prize now."</li>
+            <li><strong>Authority:</strong> An email pretending to be the CEO, University Administration, or IT Support demanding immediate action.</li>
+        </ul>
+    </div>
+
+    <div class="module-section">
+        <h2>📧 2. Recognizing Phishing Emails</h2>
+        <p>Attackers are getting smarter, but they still leave clues. Always check for these red flags before clicking:</p>
+        <div class="highlight danger">
+            <ul>
+                <li><strong>Mismatched Sender Address:</strong> The display name might say "Support," but the actual email address is <code>support-ticket@gmail.com</code> instead of <code>@thecompany.com</code>.</li>
+                <li><strong>Generic Greetings:</strong> Using "Dear Customer" or "Dear User" instead of your actual name.</li>
+                <li><strong>Suspicious Links:</strong> Hover over (but don't click!) any link to see the actual destination URL.</li>
+                <li><strong>Unexpected Attachments:</strong> Invoices or receipts for things you didn't buy, often in <code>.zip</code>, <code>.exe</code>, or macro-enabled <code>.doc</code> formats.</li>
+                <li><strong>Poor Spelling & Grammar:</strong> While improving with AI tools, many phishing emails still contain awkward phrasing.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h2>🌐 3. Spotting Fake Websites</h2>
+        <p>If you are redirected to a website, verify its authenticity before entering any credentials:</p>
+        <ul>
+            <li><strong>Check the URL Carefully:</strong> Look for slight typos (e.g., <code>www.paypa1.com</code> instead of <code>www.paypal.com</code>, or <code>github-login.com</code> instead of <code>github.com</code>).</li>
+            <li><strong>HTTPS is Not Enough:</strong> A padlock icon (HTTPS) just means the connection is encrypted; it does <em>not</em> mean the site is legitimate. Attackers use HTTPS too.</li>
+            <li><strong>Examine the Design:</strong> Look for low-resolution logos, broken links on the homepage, or missing "Contact Us" and "Privacy Policy" footers.</li>
+        </ul>
+    </div>
+
+    <div class="module-section">
+        <h2>🚨 4. Real-World Scenarios</h2>
+        
+        <div class="scenario">
+            <h4>Scenario 1: The E-Commerce Store Panic</h4>
+            <p><strong>The Bait:</strong> You receive an email stating your domain registrar account requires immediate payment verification, or your online store will be taken offline within hours.</p>
+            <p><strong>The Catch:</strong> The link directs you to a fake login page designed to steal your credentials, giving the attacker access to your business domain or storefront.</p>
+        </div>
+
+        <div class="scenario">
+            <h4>Scenario 2: The Cryptocurrency "Withdrawal Alert"</h4>
+            <p><strong>The Bait:</strong> An urgent text or email from a cryptocurrency exchange claiming a massive withdrawal of USDT has been initiated from your wallet. It provides a link to "Cancel Transaction."</p>
+            <p><strong>The Catch:</strong> The link goes to a spoofed exchange site. Entering your login and 2FA code hands your wallet keys directly to the attacker.</p>
+        </div>
+
+        <div class="scenario">
+            <h4>Scenario 3: The Freelance Client</h4>
+            <p><strong>The Bait:</strong> A potential client messages you on a freelance platform and asks you to review a project brief, sending a <code>.rar</code> or <code>.zip</code> file.</p>
+            <p><strong>The Catch:</strong> The file contains malware designed to hijack your browser session tokens.</p>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h2>🛡️ 5. Best Practices & Tips</h2>
+        <div class="highlight">
+            <ul>
+                <li><strong>Verify Independently:</strong> If you get a suspicious email from your bank or university, do not click the link. Open your browser, type the official URL yourself, and log in to check your account.</li>
+                <li><strong>Enable Multi-Factor Authentication (MFA):</strong> Always use an authenticator app or hardware key. If an attacker steals your password, they still can't get in without the second factor.</li>
+                <li><strong>Report, Don't Reply:</strong> Use your email provider's "Report Phishing" button. Never reply to the attacker.</li>
+                <li><strong>Keep Software Updated:</strong> Ensure your operating system, browser, and antivirus are up to date to patch security vulnerabilities.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h2>📝 6. Interactive Knowledge Check</h2>
+        <p>Test what you've learned. Click on the best answer for each question.</p>
+
+        <!-- Quiz 1 -->
+        <div class="quiz-container" id="q1">
+            <div class="question">1. You receive an email from "IT Support" asking you to click a link to upgrade your email storage immediately, or your inbox will be locked. What is the FIRST thing you should do?</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', false)">A) Click the link and enter your credentials quickly.</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', false)">B) Forward the email to your friends to warn them.</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q1', true, 'Hovering reveals the true destination of the link without triggering any malicious scripts.')">C) Hover over the sender's address and the link to check their true origins.</button>
+            </div>
+            <div class="feedback" id="q1-feedback"></div>
+        </div>
+
+        <!-- Quiz 2 -->
+        <div class="quiz-container" id="q2">
+            <div class="question">2. True or False: If a website has a padlock icon next to the URL, it is 100% safe to enter your credit card information.</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q2', false)">A) True</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q2', true, 'The padlock only means the data is encrypted in transit. Phishing sites can easily obtain SSL certificates.')">B) False</button>
+            </div>
+            <div class="feedback" id="q2-feedback"></div>
+        </div>
+
+        <!-- Quiz 3 -->
+        <div class="quiz-container" id="q3">
+            <div class="question">3. You accidentally clicked a suspicious link and entered your password. What is your immediate next step?</div>
+            <div class="options">
+                <button class="option-btn" onclick="checkAnswer(this, 'q3', false)">A) Shut down your computer and wait a day.</button>
+                <button class="option-btn" onclick="checkAnswer(this, 'q3', true, 'Changing your password immediately on the legitimate site can lock the attacker out before they do damage.')">B) Immediately change your password directly on the official website and notify your IT department.</button>
+            </div>
+            <div class="feedback" id="q3-feedback"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkAnswer(btn, questionId, isCorrect, explanation = '') {
+        const container = document.getElementById(questionId);
+        const feedback = document.getElementById(questionId + '-feedback');
+        const buttons = container.querySelectorAll('.option-btn');
+        
+        // Reset all buttons in this question
+        buttons.forEach(b => {
+            b.classList.remove('selected-correct', 'selected-incorrect');
+        });
+
+        // Add visual feedback to the clicked button
+        if (isCorrect) {
+            btn.classList.add('selected-correct');
+            feedback.innerHTML = "✅ <strong>Correct!</strong> " + explanation;
+            feedback.style.backgroundColor = "#c6f6d5";
+            feedback.style.color = "#22543d";
+        } else {
+            btn.classList.add('selected-incorrect');
+            feedback.innerHTML = "❌ <strong>Incorrect.</strong> Please review the material and try again.";
+            feedback.style.backgroundColor = "#fed7d7";
+            feedback.style.color = "#742a2a";
+        }
+
+        // Show feedback container
+        feedback.classList.remove('show');
+        // Trigger reflow to restart animation
+        void feedback.offsetWidth;
+        feedback.classList.add('show');
+    }
+</script>
+
+</body>
+</html>
